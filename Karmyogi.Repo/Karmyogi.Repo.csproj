@@ -73,6 +73,7 @@
     <Compile Include="Repositories\StatusRepository.cs" />
     <Compile Include="Repositories\UserDeletedRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\ViewedProfileRepository.cs" />
     <Compile Include="Repositories\WeightRepository.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Repositories\RoleRepository.cs" />
