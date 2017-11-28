@@ -1,0 +1,14 @@
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\bin\Debug\Karmyogi.Repo.dll.config
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\bin\Debug\Karmyogi.Repo.dll
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\bin\Debug\Karmyogi.Repo.pdb
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\bin\Debug\EntityFramework.dll
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\bin\Debug\EntityFramework.SqlServer.dll
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\bin\Debug\Karmyogi.Data.dll
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\bin\Debug\Karmyogi.Data.pdb
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\bin\Debug\Karmyogi.Data.dll.config
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\bin\Debug\EntityFramework.xml
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\bin\Debug\EntityFramework.SqlServer.xml
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\obj\Debug\Karmyogi.Repo.csprojResolveAssemblyReference.cache
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\obj\Debug\Karmyogi.Repo.csproj.CoreCompileInputs.cache
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\obj\Debug\Karmyogi.Repo.dll
+D:\DOT NET\KarmyogiWeb\Karmyogi.Repo\obj\Debug\Karmyogi.Repo.pdb

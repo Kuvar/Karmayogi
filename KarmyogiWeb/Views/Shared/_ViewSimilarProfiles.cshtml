@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Karmyogi.Data.Profile>
+
+<h3>View Similar Profiles</h3>
+@foreach (var item in Model)
+{
+    <ul class="profile_item">
+        <a href="@Url.Action("ViewProfile", "Home", new { @id=item.SecurityKey })">
+            <li class="profile_item-img">
+                <img src="images/p5.jpg" class="img-responsive" alt="" />
+            </li>
+            <li class="profile_item-desc">
+                <h4>@item.DisplayID</h4>
+                <p>@Html.AgeFormat(item.Date_of_Birth.Value) Yrs, @(item.Height != null ? item.Height.HeightText.Replace('-', '/') : "") @item.F_Name</p>
+                <h5>View Full Profile</h5>
+            </li>
+            <div class="clearfix"> </div>
+        </a>
+    </ul>
+}
+

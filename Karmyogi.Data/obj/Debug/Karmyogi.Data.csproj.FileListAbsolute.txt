@@ -1,0 +1,11 @@
+D:\DOT NET\KarmyogiWeb\Karmyogi.Data\bin\Debug\Karmyogi.Data.dll.config
+D:\DOT NET\KarmyogiWeb\Karmyogi.Data\bin\Debug\Karmyogi.Data.dll
+D:\DOT NET\KarmyogiWeb\Karmyogi.Data\bin\Debug\Karmyogi.Data.pdb
+D:\DOT NET\KarmyogiWeb\Karmyogi.Data\bin\Debug\EntityFramework.dll
+D:\DOT NET\KarmyogiWeb\Karmyogi.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\DOT NET\KarmyogiWeb\Karmyogi.Data\bin\Debug\EntityFramework.xml
+D:\DOT NET\KarmyogiWeb\Karmyogi.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\DOT NET\KarmyogiWeb\Karmyogi.Data\obj\Debug\Karmyogi.Data.csproj.CoreCompileInputs.cache
+D:\DOT NET\KarmyogiWeb\Karmyogi.Data\obj\Debug\Karmyogi.Data.dll
+D:\DOT NET\KarmyogiWeb\Karmyogi.Data\obj\Debug\Karmyogi.Data.pdb
+D:\DOT NET\KarmyogiWeb\Karmyogi.Data\obj\Debug\Karmyogi.Data.csprojResolveAssemblyReference.cache

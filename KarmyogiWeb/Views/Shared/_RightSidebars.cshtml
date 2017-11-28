@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Karmyogi.Data.Profile>
+
+<ul class="menu">
+    <li class="item1">
+        <h3 class="m_2">Show Profiles Created</h3>
+        <ul class="cute">
+            <li class="subitem1"><a href="#">within a week (2) </a></li>
+            <li class="subitem2"><a href="#">within a month (4)</a></li>
+        </ul>
+    </li>
+    <li class="item1">
+        <h3 class="m_2">Profile type</h3>
+        <ul class="cute">
+            <li class="subitem1"><a href="#">with Photo (@Model.Where(c => c.ProfileImages != null).Count()) </a></li>
+        </ul>
+    </li>
+    <li class="item1">
+        <h3 class="m_2">Marital Status</h3>
+        <ul class="cute">
+            <li class="subitem1"><a href="#">Unmarried (@Model.Where(c=>c.Marital_Status.Contains("Single")).Count()) </a></li>
+        </ul>
+    </li>
+    <li class="item1">
+        <h3 class="m_2">Mother Tongue</h3>
+        <ul class="cute">
+            <li class="subitem1"><a href="#">English (@Model.Where(c => c.Mother_TongueId == 3).Count()) </a></li>
+            <li class="subitem1"><a href="#">Hindi (@Model.Where(c => c.Mother_TongueId == 5).Count()) </a></li>
+        </ul>
+    </li>
+    <li class="item1">
+        <h3 class="m_2">Education</h3>
+        <ul class="cute">
+            <li class="subitem1"><a href="#">Bachelors-Engineering (@Model.Where(c => c.Last_Degree_Id == 2).Count())</a></li>
+            <li class="subitem1"><a href="#">Masters-Engineering (@Model.Where(c => c.Last_Degree_Id == 3).Count())</a></li>
+            <li class="subitem1"><a href="#">PhD (@Model.Where(c => c.Last_Degree_Id == 5).Count())</a></li>
+        </ul>
+    </li>
+    <li class="item1">
+        <h3 class="m_2">Occupation</h3>
+        <ul class="cute">
+            <li class="subitem1"><a href="#">Banking (@Model.Where(c => c.Occupation_Id == 9).Count()) </a></li>
+            <li class="subitem1"><a href="#">Government (@Model.Where(c => c.Occupation_Id == 27).Count()) </a></li>
+            <li class="subitem1"><a href="#">Sales/Marketing (@Model.Where(c => c.Occupation_Id == 57).Count()) </a></li>
+            <li class="subitem1"><a href="#">Software Professional (@Model.Where(c => c.Occupation_Id == 60).Count())</a></li>
+            <li class="subitem1"><a href="#">Teaching (@Model.Where(c => c.Occupation_Id == 62).Count()) </a></li>
+        </ul>
+    </li>
+    <li class="item1">
+        <h3 class="m_2">Physical Status</h3>
+        <ul class="cute">
+            <li class="subitem1"><a href="#">Normal (@Model.Where(c => c.Physical_Status.Contains("Normal")).Count()) </a></li>
+            <li class="subitem1"><a href="#">Physically Challenged (@Model.Where(c => c.Physical_Status.Contains("Physically Challenged")).Count()) </a></li>
+        </ul>
+    </li>
+    <li class="item1">
+        <h3 class="m_2">Eating Habits</h3>
+        <ul class="cute">
+            <li class="subitem1"><a href="#">Non Vegetarian (@Model.Where(c => c.Diet.Contains("Non Vegetarian")).Count())</a></li>
+            <li class="subitem1"><a href="#">Vegetarian (@Model.Where(c => c.Diet.Contains("Vegetarian")).Count())</a></li>
+        </ul>
+    </li>
+    <li class="item1">
+        <h3 class="m_2">Smoking</h3>
+        <ul class="cute">
+            <li class="subitem1"><a href="#">Not Specified (3)</a></li>
+        </ul>
+    </li>
+    <li class="item1">
+        <h3 class="m_2">Drinking</h3>
+        <ul class="cute">
+            <li class="subitem1"><a href="#">Not Specified (3)</a></li>
+            <li class="subitem1"><a href="#">Never Drinks (3)</a></li>
+        </ul>
+    </li>
+    <li class="item1">
+        <h3 class="m_2">Profile Created by</h3>
+        <ul class="cute">
+            <li class="subitem1"><a href="#">Self (1)</a></li>
+        </ul>
+    </li>
+</ul>
+
