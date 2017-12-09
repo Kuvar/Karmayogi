@@ -1,0 +1,120 @@
+﻿@model Karmyogi.Repo.AdminSearchModel
+
+@{
+    ViewBag.Title = "SearchUser";
+}
+<link rel="stylesheet" href="~/Content/Admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="~/Content/Admin/CustomStyle.css">
+<style type="text/css">
+    #frmSearchProfile .form-group{
+        padding-right:0px;
+    }
+</style>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="row">
+                    @using (Ajax.BeginForm("ProfileSearch", "Admin", new AjaxOptions
+                    {
+                        HttpMethod = "Post",
+                        OnBegin = "ShowLoader",
+                        OnSuccess = "ProfileSearchSuccess",
+                        OnFailure = "ProfileSearchFailure",
+                        OnComplete = "HideLoader"
+                    }, new { id= "frmSearchProfile" }))
+                    {
+                        <div class="form-group col-sm-2">
+                            <label for="exampleInputEmail1">First Name</label>
+                            @Html.TextBoxFor(model => model.Name, new { @class= "form-control", placeholder = "First Name" })
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <label for="exampleInputEmail1">Gender</label>
+                            @Html.DropDownListFor(model => model.LookingFor, Model.LookingForList, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <label for="exampleInputEmail1">Age Range</label>
+                            <div class="row">
+                                <div class="col-sm-6" style="padding-right:5px;">
+                                    @Html.TextBoxFor(model => model.AgeFrom, new { @class = "form-control", type = "number", min = "18", max = "49", step = "1" })
+                                </div>
+                                <div class="col-sm-6" style="padding-left:0px">
+                                    @Html.TextBoxFor(model => model.AgeTo, new { @class = "form-control", type = "number", min = "19", max = "50", step = "1" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <label for="exampleInputEmail1">Religion</label>
+                            @Html.DropDownListFor(model => model.ReligionId, Model.Religions, "* Select Religion", new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label for="exampleInputEmail1">Caste</label>
+                            @Html.DropDownListFor(model => model.CasteId, Model.Castes, "* Select Caste", new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-sm-1" style="padding-top:25px;">
+                            <input type="submit" value="Search" class="btn btn-default" />
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                @{Html.RenderAction("ProfileSearch", "Admin"); }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="loader"></div> 
+<div class="loading">
+    <div class="loader"></div>
+    Loading&#8230;
+</div>
+@section Scripts {
+    <!-- DataTables -->
+    
+    <script src="@Url.Content("~/Content/Admin/bower_components/datatables.net/js/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Content/Admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/CustomJS.js")"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#tblUsers').DataTable({
+                'paging': true,
+                'lengthChange': false,
+                'searching': false,
+                'ordering': true,
+                'info': true,
+                'autoWidth': false
+            });
+        });
+
+        function ShowLoader() {
+            $('.loader').show();
+            $('.loading').show();
+        };
+
+        function ProfileSearchFailure(e) {
+            
+            alert(e);
+        };
+
+        function ProfileSearchSuccess(data) {
+            //alert(data);
+            $('.box-body').html(data);
+        };
+
+        function HideLoader() {
+            setTimeout(function () {
+                $('.loader').hide();
+                $('.loading').hide();
+            }, 1000);        
+        };
+
+        function ProfileDeleteSuccess(data) {
+            alert(data.id);
+        };
+
+        function ProfileDeleteFailure() {
+
+        }
+    </script>
+}

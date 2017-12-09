@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Karmyogi.Data.Profile>
+
+<table class="table table-bordered table-hover" id="tblUsers">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Occupation
+            </th>
+            <th>
+                Higher Education
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Contact No.
+            </th>
+            <th>
+                Live In State
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Created_Date)
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @(item.F_Name + " " + item.M_Name + " " + item.L_Name )
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Profession.ProfessionName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastDegree.LastDegreeName)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State.StateName)
+                </td>
+                <td>
+                    @(item.Created_Date.Value.ToString("dd/MM/yyyy"))
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProfileID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ProfileID }) |
+                    @Ajax.ActionLink("Delete", "DeleteProfile", "Admin", new { id = item.ProfileID }, new AjaxOptions { HttpMethod = "Post", OnBegin = "ShowLoader", OnSuccess = "ProfileDeleteSuccess", OnFailure = "ProfileDeleteFailure", OnComplete = "HideLoader" })
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
