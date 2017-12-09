@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace KarmyogiWeb.Controllers
 {
@@ -120,6 +121,15 @@ namespace KarmyogiWeb.Controllers
             }
         }
 
+        public PartialViewResult SimilarProfilesViewed(Profile model)
+        {
+            var ViewedBy = service.ViewedProfile.Get(c => c.ViewedToWhomId == model.ProfileID).Select(c=>c.ViewedById);
+            var profileId = service.ViewedProfile.Get(c => ViewedBy.Contains(c.ViewedToWhomId)).Select(c => c.ViewedToWhomId);
+            var profile = service.Profile.Get(c => profileId.Contains(c.ProfileID));
+            return PartialView(profile);
+
+        }
+
         [AcceptVerbs(HttpVerbs.Get)]
         public JsonResult GetCasteByReligionId(int id)
         {
@@ -140,6 +150,33 @@ namespace KarmyogiWeb.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken()]
+        public ActionResult Login(LoginModel model, string returnUrl)
+        {
+
+            var Islogin = service.Profile.IsUser(model);
+            if (Islogin != null)
+            {
+                FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1, Islogin.F_Name, DateTime.Now, DateTime.Now.AddDays(2), false, Islogin.Role.Name);
+                String encryptedTicket = FormsAuthentication.Encrypt(authTicket);
+                HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
+                System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);
+                HttpContext.Response.Cookies.Add(authCookie);
+                if (Islogin.Role.Id == 1)
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+                else { return RedirectToAction("Index", "Home"); }
+            }
+            else
+            {
+
+            }
+
             return View();
         }
     }

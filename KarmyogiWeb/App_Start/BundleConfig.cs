@@ -14,8 +14,8 @@ namespace KarmyogiWeb
             ignoreList.Ignore("*.intellisense.js");
             ignoreList.Ignore("*-vsdoc.js");
             ignoreList.Ignore("*.debug.js", OptimizationMode.WhenEnabled);
-            ignoreList.Ignore("*.min.js", OptimizationMode.WhenDisabled);
-            ignoreList.Ignore("*.min.css", OptimizationMode.WhenDisabled);
+            //ignoreList.Ignore("*.min.js", OptimizationMode.WhenDisabled);
+            //ignoreList.Ignore("*.min.css", OptimizationMode.WhenDisabled);
         }
 
         public static void RegisterBundles(BundleCollection bundles)
@@ -40,6 +40,43 @@ namespace KarmyogiWeb
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/AdminJQ").Include(
+                      "~/Content/Admin/bower_components/jquery/dist/jquery.min.js",
+                      "~/Content/Admin/bower_components/jquery-ui/jquery-ui.min.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/AdminLte").Include(
+                      
+                      "~/Content/Admin/bower_components/bootstrap/dist/js/bootstrap.min.js",
+                      "~/Content/Admin/bower_components/raphael/raphael.min.js",
+                      "~/Content/Admin/bower_components/morris.js/morris.min.js",
+                      "~/Content/Admin/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js",
+                      "~/Content/Admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js",
+                      "~/Content/Admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js",
+                      "~/Content/Admin/bower_components/jquery-knob/dist/jquery.knob.min.js",
+                      "~/Content/Admin/bower_components/moment/min/moment.min.js",
+                      "~/Content/Admin/bower_components/bootstrap-daterangepicker/daterangepicker.js",
+                      "~/Content/Admin/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
+                      "~/Content/Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js",
+                      "~/Content/Admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js",
+                      "~/Content/Admin/bower_components/fastclick/lib/fastclick.js",
+                      "~/Content/Admin/dist/js/adminlte.min.js",
+                      "~/Content/Admin/dist/js/pages/dashboard.js",
+                      "~/Content/Admin/dist/js/demo.js"));
+
+
+            bundles.Add(new StyleBundle("~/Content/Admin").Include(
+                      "~/Content/Admin/bower_components/bootstrap/dist/css/bootstrap.min.css",
+                      "~/Content/Admin/bower_components/font-awesome/css/font-awesome.min.css",
+                      "~/Content/Admin/bower_components/Ionicons/css/ionicons.min.css",
+                      "~/Content/Admin/dist/css/AdminLTE.min.css",
+                      "~/Content/Admin/dist/css/skins/_all-skins.min.css",
+                      "~/Content/Admin/bower_components/morris.js/morris.css",
+                      "~/Content/Admin/bower_components/jvectormap/jquery-jvectormap.css",
+                      "~/Content/Admin/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css",
+                      "~/Content/Admin/bower_components/bootstrap-daterangepicker/daterangepicker.css",
+                      "~/Content/Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"));         
         }
     }
 }

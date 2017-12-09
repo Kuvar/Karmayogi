@@ -71,8 +71,8 @@
                         </div>
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                            <ul class="nav navbar-nav nav_1">
-                                <li><a href="index.html">Home</a></li>
+                            <ul class="nav navbar-nav nav_1 pull-left">
+                                <li><a href="@Url.Action("index","home")">Home</a></li>
                                 <li><a href="about.html">About</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Matches<span class="caret"></span></a>
@@ -94,17 +94,10 @@
                                         <li><a href="shortcodes.html">Shortcodes</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Messages<span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="inbox.html">Inbox</a></li>
-                                        <li><a href="inbox.html">New</a></li>
-                                        <li><a href="inbox.html">Accepted</a></li>
-                                        <li><a href="sent.html">Sent</a></li>
-                                        <li><a href="upgrade.html">Upgrade</a></li>
-                                    </ul>
-                                </li>
                                 <li class="last"><a href="contact.html">Contacts</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav pull-right">
+                                @Html.Partial("_LoginPartial") 
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </nav>

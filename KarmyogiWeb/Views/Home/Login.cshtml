@@ -1,4 +1,4 @@
-﻿@model Karmyogi.LoginModel
+﻿@model Karmyogi.Repo.LoginModel
 
 @{
     ViewBag.Title = "Login";
@@ -15,8 +15,9 @@
         <!---728x90--->
         <div class="services">
             <div class="col-sm-6 login_left">
-                @using (Html.BeginForm())
+                @using (Html.BeginForm("Login", "Home", FormMethod.Post, new { ReturnUrl = ViewBag.ReturnUrl }))
                 {
+                    @Html.AntiForgeryToken()
                     <div class="form-item form-type-textfield form-item-name">
                         <label for="edit-name">Username <span class="form-required" title="This field is required.">*</span></label>
                         @Html.TextBoxFor(model => model.UserName, new { @class = "form-text required", size = "60", maxlength = "60" })
