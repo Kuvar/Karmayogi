@@ -52,5 +52,10 @@ namespace Karmyogi.Repo
                 throw ex;
             }
         }
+
+        public Profile IsUser(LoginModel model)
+        {
+            return Get(c => c.Email == model.UserName && c.Password == model.Password, includeProperties: "Role").FirstOrDefault();
+        }
     }
 }
